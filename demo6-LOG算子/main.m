@@ -5,8 +5,8 @@ clc; % 清空命令行
 I = imread('demo.jpg');
 I = rgb2gray(I);
 I = im2double(I);
-J = imnoise(I, 'gaussian', 0, 0.01); % 添加高斯噪声
-[K, thresh] = edge(J, 'canny'); % Canny算子检测边缘
+J = imnoise(I, 'gaussian', 0, 0.005); % 添加高斯噪声
+[K, thresh] = edge(J, 'log', [], 2.3); % LOG算子检测边缘
 
 figure;
 subplot(121); imshow(J);
