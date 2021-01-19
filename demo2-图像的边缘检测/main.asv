@@ -13,20 +13,16 @@ I_Prewitt = rgb2gray(I_Prewitt);
 I_Prewitt = im2double(I_Prewitt);
 
 % Sobel算子
-I_Sobel = imread('demo-Sobel.jpg');
-I_Sobel = rgb2gray(I_Sobel);
-I_Sobel = im2double(I_Sobel);
+I_Sobel = imread('demo-S.jpg');
+I_Prewitt = rgb2gray(I_Prewitt);
+I_Prewitt = im2double(I_Prewitt);
 
 [J_Roberts, thresh1] = edge(I_Roberts, 'roberts', 35/255); % Roberts算子进行边缘检测
 [J_Prewitt, thresh2] = edge(I_Prewitt, 'prewitt', [], 'both'); % Prewitt算子进行边缘检测
-[J_Sobel, thresh3] = edge(I_Sobel, 'sobel', [], 'horizontal'); % Sobel算子进行边缘检测
 
 figure;
-subplot(3,2,1); imshow(I_Roberts);
-subplot(3,2,2); imshow(J_Roberts);
+subplot(2,2,1); imshow(I_Roberts);
+subplot(2,2,2); imshow(J_Roberts);
 
-subplot(3,2,3); imshow(I_Prewitt);
-subplot(3,2,4); imshow(J_Prewitt);
-
-subplot(3,2,5); imshow(I_Sobel);
-subplot(3,2,6); imshow(J_Sobel);
+subplot(2,2,3); imshow(I_Prewitt);
+subplot(2,2,4); imshow(J_Prewitt);
