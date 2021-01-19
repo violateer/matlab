@@ -4,7 +4,18 @@ clc; % 清空命令行
 
 I = imread('demo.jpg');
 I = rgb2gray(I);
+J = I > 100;    % 图像分割，阈值为100
+[width, height] = size(I);  % 图像的行和列
+for i=1: width
+    for j=1: height
+        if (I(i, j) > 120 )     % 图像分割，阈值为120
+            K(i, j) = 1;
+        else
+            K(i, j) = 0;
+        end
+    end
+end
 
 figure;
-subplot(121); imshow(I);
-subplot(122); imhist(I, 200); % 显示直方图
+subplot(121); imshow(J);
+subplot(122); imshow(K);
