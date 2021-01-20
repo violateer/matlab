@@ -17,5 +17,6 @@ for i=1: width
 end
 
 figure;
+% subplot(121); imhist(I, 200); % 显示直方图
 subplot(121); imshow(J);
 subplot(122); imshow(K);
